@@ -1,0 +1,9 @@
+First we run the command to start Docker in the terminal:
+
+docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+(-d is for the process not being attached to the terminal while is running)
+(-rm whenever we stop the container it will be automatically deleted)
+(--name mongo is just the name, can be any)
+(-p 27017:27017 to specify the port we want to use for this container the first port will mapped into the second port)
+(-v mongodbdata:/data/db is for tell docker to save the db files aoutside of the container, so when the contaier is deleted the data and files won't)
+(mongo: this is the name of the docker image)

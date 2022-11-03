@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+  <!-- We remove this reference because now we are going to use the new nuget packages locally created by us, so we don't need here the mongodb driver reference -->
+    <!-- <PackageReference Include="MongoDB.Driver" Version="2.17.1" /> -->
+    <!-- Using the commands we are creating the reference to the new package manager created by us into the project:
+    PS C:\Users\gabri\source\repos\Play.Catalog\src\PLay.Catalog.Service> dotnet nuget add source C:\Users\gabri\source\repos\packages -n PlayEconomyFixed
+    PS C:\Users\gabri\source\repos\Play.Catalog\src\PLay.Catalog.Service> dotnet add package Play.Common   
+    Command to restore the nuget package configuration file
+    dotnet restore -(no blanc space in these 2 characters)-verbosity normal -->
+
+    <PackageReference Include="Play.Common" Version="1.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Play.Catalog.Contracts\Play.Catalog.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
